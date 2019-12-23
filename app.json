@@ -1,0 +1,56 @@
+{
+	"metadata": {
+		"type": "App"
+	},
+	"project": {
+		"vr": false,
+		"cache": false,
+		"editable": false,
+		"debugMode": true,
+		"shadows": true
+	},
+	"gbfunctions": [],
+	"jslibraries": [],
+	"stylesheets": [],
+	"scripts": {
+		"3020AE50-A7A0-4AAE-91A5-6C5821F68FC1": [
+			{
+				"name": "service-worker.js",
+				"source": "// ServiceWorker.\n\nif ( \"serviceWorker\" in navigator ) {\n\n\ttry {\n\n\t\tnavigator.serviceWorker.register( \"sw.js\" );\n\n\t} catch ( error ) {\n\n\t\tdebugMode && console.log( error );\n\n\t}\n\n}\n\n"
+			}]
+	},
+	"camera": {
+		"metadata": {
+			"version": 4.4,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"object": {
+			"uuid": "1637F180-0E3C-4825-8595-ED30A8D33F34",
+			"type": "PerspectiveCamera",
+			"name": "Camera",
+			"matrix": [-0.8302755355834961,-4.966284716800828e-9,-0.5573531985282898,0,-0.18578439950942993,0.9428090453147888,0.27675849199295044,0,0.5254775881767273,0.3333333432674408,-0.782791256904602,0,15.764328002929688,10,-23.48373794555664,1],
+			"fov": 50,
+			"zoom": 1,
+			"near": 0.1,
+			"far": 10000,
+			"focus": 10,
+			"aspect": 1.8543577981651376,
+			"filmGauge": 35,
+			"filmOffset": 0
+		}
+	},
+	"scene": {
+		"metadata": {
+			"version": 4.4,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"object": {
+			"uuid": "3020AE50-A7A0-4AAE-91A5-6C5821F68FC1",
+			"type": "Scene",
+			"name": "Scene",
+			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+		}
+	}
+}
