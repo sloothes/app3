@@ -31,15 +31,17 @@
 
 	];
 
-	self.addEventListener( "install", async function () {
+	self.addEventListener( "install", function () {
 
-		var cache = await caches.open( "libraries" );
+		caches.open( "libraries" ).then( function( cache ){
 
-		libraries.forEach( function ( script ) {
+			libraries.forEach( function ( script ) {
 
-			cache.add( script ).catch( function () {
+				cache.add( script ).catch( function () {
 
-				console.error( '[SW] Cound\'t cache:', script );
+					console.error( '[SW] Cound\'t cache:', script );
+
+				});
 
 			});
 
@@ -47,24 +49,43 @@
 
 	});
 
-	self.addEventListener( "fetch", async function ( event ) {
+	self.addEventListener( "fetch", function ( event ) {
 
 		const request = event.request;
 		event.respondWith( cacheFirst( request ) );
 
 	});
 
-	async function cacheFirst( request ) {
+	function cacheFirst( request ) {
 
-		const cachedResponse = await caches.match( request );
+		caches.match( request ).then( function( cachedResponse ){
 
-		if ( cachedResponse === undefined ) {
+			if ( cachedResponse === undefined ) {
 
-			console.error( '[SW] Not cached:', request.url );
-			return fetch( request );
+				console.error( '[SW] Not cached:', request.url );
+				return fetch( request );
 
-		}
+			}
 
-		return cachedResponse;
+			return cachedResponse;
 
+		});
 	}
+
+    function unistall(){
+
+        self.registration.unregister().then(function(){
+
+            return self.clients.matchAll();
+
+        }).then(function(clients) {
+
+            clients.forEach(function(client){
+                client.navigate(client.url);  // will be re-installed on reload!
+                console.log("service worker unistalled from client " + client.url);
+            });
+
+        });
+
+    }
+
