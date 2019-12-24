@@ -58,18 +58,16 @@
 
 	function cacheFirst( request ) {
 
-		caches.match( request ).then( function( cachedResponse ){
+		return caches.match( request ).then( function( cachedResponse ){
 
 			if ( cachedResponse === undefined ) {
 
 				debugMode && console.log( "[SW] Not cached:", request.url );
 				return fetch( request );
 
-			} else {
-
-				return cachedResponse;
-
 			}
+
+			return cachedResponse;
 
 		});
 	}
