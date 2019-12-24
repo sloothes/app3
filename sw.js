@@ -3,7 +3,7 @@
 	self.version = 1;
 	var debugMode = true;
 
-	var libraries = [
+	const libraries = [
 
 		"/js/Objectid.js",
 		"/js/rawdeflate.js",
@@ -31,18 +31,41 @@
 
 	];
 
+	const stylesheets = [
+
+		"/css/bootstrap.min.css",
+		"/css/joystick.css",
+		"/css/jquery.Jcrop.css",
+		"/photoswipe/dist/photoswipe.css",
+		"/dist/default-skin/default-skin.css",
+
+	];
+
+
 	self.addEventListener( "install", function () {
 
-		caches.open( "libraries" ).then( function( cache ){
+		caches.open( "app" ).then( function( cache ){
 
-			libraries.forEach( function ( script ) {
+			cache.add( "/favicon.ico" );
 
-				cache.add( script ).catch( function () {
+		}).then( function(){
+			return caches.open( "libraries" );
+		}).then( function( cache ){
 
-					console.error( "[SW] Cound\'t cache:", script );
-
+			libraries.forEach( function ( js ) {
+				cache.add( js ).catch( function () {
+					console.error( "[SW] Cound\'t cache:", js );
 				});
+			});
 
+		}).then( function(){
+			return caches.open( "stylesheets" );
+		}).then( function( cache ){
+
+			stylesheets.forEach( function ( css ) {
+				cache.add( css ).catch( function () {
+					console.error( "[SW] Cound\'t cache:", css );
+				});
 			});
 
 		});
