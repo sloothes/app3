@@ -42,6 +42,19 @@
 
 	];
 
+	const textures = [
+
+	//	background.
+		"https://i.imgur.com/v6bjQLb.jpg", // "posx"
+		"https://i.imgur.com/lwrlr6P.jpg", // "negx"
+		"https://i.imgur.com/kKUKBJg.jpg", // "posy"
+		"https://i.imgur.com/N0oZlJR.jpg", // "negy"
+		"https://i.imgur.com/x9q8z0K.jpg", // "posz"
+		"https://i.imgur.com/HYcK7Ii.jpg", // "negz"
+
+
+	];
+
 
 	self.addEventListener( "install", function () {
 
@@ -53,9 +66,9 @@
 			return caches.open( "libraries" );
 		}).then( function( cache ){
 
-			libraries.forEach( function ( js ) {
-				cache.add( js ).catch( function () {
-					console.error( "[SW] Cound\'t cache:", js );
+			libraries.forEach( function ( url ) {
+				cache.add( url ).catch( function () {
+					console.error( "[SW] Cound\'t cache:", url );
 				});
 			});
 
@@ -63,9 +76,19 @@
 			return caches.open( "stylesheets" );
 		}).then( function( cache ){
 
-			stylesheets.forEach( function ( css ) {
-				cache.add( css ).catch( function () {
-					console.error( "[SW] Cound\'t cache:", css );
+			stylesheets.forEach( function ( url ) {
+				cache.add( url ).catch( function () {
+					console.error( "[SW] Cound\'t cache:", url );
+				});
+			});
+
+		}).then( function(){
+			return caches.open( "textures" );
+		}).then( function( cache ){
+
+			textures.forEach( function ( url ) {
+				cache.add( url ).catch( function () {
+					console.error( "[SW] Cound\'t cache:", url );
 				});
 			});
 
