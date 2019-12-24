@@ -33,9 +33,10 @@
 
 	const stylesheets = [
 
-		"/css/bootstrap.min.css",
 		"/css/joystick.css",
 		"/css/jquery.Jcrop.css",
+		"/css/bootstrap.min.css",
+		"/css/bootbox-dialoges.css",
 		"/photoswipe/dist/photoswipe.css",
 		"/photoswipe/dist/default-skin/default-skin.css",
 
