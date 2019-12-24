@@ -37,7 +37,7 @@
 		"/css/joystick.css",
 		"/css/jquery.Jcrop.css",
 		"/photoswipe/dist/photoswipe.css",
-		"/dist/default-skin/default-skin.css",
+		"/photoswipe/dist/default-skin/default-skin.css",
 
 	];
 
