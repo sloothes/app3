@@ -108,7 +108,7 @@
 
 				} else {
 
-					console.log( "on progress:", loaded, "KB loaded." );
+					console.log( "on progress:", loaded.toFixed(2), "KB loaded." );
 
 				//	var total = 56291835; // (in bytes)
 				//	var percent = (e.loaded / total) * 100;
@@ -126,27 +126,6 @@
 
 			});
 
-
-		</script>
-
-		<script>
-
-		// ServiceWorker (test it inside app).
-		/*
-			if ( "serviceWorker" in navigator ) {
-
-				try {
-
-					navigator.serviceWorker.register( "sw.js" );
-
-				} catch ( error ) {
-
-					console.log( error );
-
-				}
-
-			}
-		*/
 
 		</script>
 
