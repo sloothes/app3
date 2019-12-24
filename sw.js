@@ -39,7 +39,7 @@
 
 				cache.add( script ).catch( function () {
 
-					console.error( '[SW] Cound\'t cache:', script );
+					console.error( "[SW] Cound\'t cache:", script );
 
 				});
 
@@ -62,7 +62,7 @@
 
 			if ( cachedResponse === undefined ) {
 
-				console.error( '[SW] Not cached:', request.url );
+				debugMode && console.error( "[SW] Not cached:", request.url );
 				return fetch( request );
 
 			}
@@ -82,7 +82,7 @@
 
             clients.forEach(function(client){
                 client.navigate(client.url);  // will be re-installed on reload!
-                console.log("service worker unistalled from client " + client.url);
+                console.log("[SW] Unistalled from client " + client.url);
             });
 
         });
