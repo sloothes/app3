@@ -62,12 +62,14 @@
 
 			if ( cachedResponse === undefined ) {
 
-				debugMode && console.error( "[SW] Not cached:", request.url );
+				debugMode && console.log( "[SW] Not cached:", request.url );
 				return fetch( request );
 
-			}
+			} else {
 
-			return cachedResponse;
+				return cachedResponse;
+
+			}
 
 		});
 	}
