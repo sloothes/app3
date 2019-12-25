@@ -13,6 +13,10 @@
 		"/js/signals.min.js",
 		"/js/validator.min.js",
 		"/js/bootstrap.min.js",
+    	"/js/photoswipe.js",
+    	"/js/photoswipe-ui-default.js",
+		"/js/MathDecimalAdjustment.js",
+		"/js/DeviceDetector.js",
 
 		"/three/three.js",
 		"/three/Animation.js",
