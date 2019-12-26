@@ -38,6 +38,7 @@
 	const stylesheets = [
 
 		"/css/joystick.css",
+		"/css/anywhere3d.css",
 		"/css/jquery.Jcrop.css",
 		"/css/bootstrap.min.css",
 		"/css/bootbox-dialoges.css",
