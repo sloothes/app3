@@ -15,11 +15,11 @@
 	"scripts": {
 		"3020AE50-A7A0-4AAE-91A5-6C5821F68FC1": [
 			{
-				"name": "sw",
+				"name": "service-worker.js",
 				"source": "// ServiceWorker.\n\nif ( \"serviceWorker\" in navigator ) {\n\n\ttry {\n\n\t\tnavigator.serviceWorker.register( \"sw.js\" );\n\n\t} catch ( error ) {\n\n\t\tdebugMode && console.log( error );\n\n\t}\n\n}\n\n"
 			},
 			{
-				"name": "scc",
+				"name": "socketcluster.js",
 				"source": "//  Socketcluster.\n\nsocket = socketCluster.create({\n\thostname: \"anywhere3d.com\",\n\tcodecEngine: scCodecMinBin,\n});\n\nsocket.on(\"connect\", function(status){\n\tdebugMode && console.log({\"status\": status});\n});\n\nsocket.on(\"error\", function (err) {\n\tconsole.error( err.stack );\n});\n\nsocket.on(\"authStateChange\", function( state ){\n\tdebugMode && console.log({\"authStateChange\": state});\n});\n\nsocket.on(\"subscribe\", function( name, object ){\n\tdebugMode && console.log(\"subscribed successfully to\", name, \"channel:\", object);\n});\n\n"
 			},
 			{
@@ -97,7 +97,7 @@
 			"uuid": "1637F180-0E3C-4825-8595-ED30A8D33F34",
 			"type": "PerspectiveCamera",
 			"name": "Camera",
-			"matrix": [-0.8302755355834961,-4.966284716800828e-9,-0.5573531985282898,0,-0.18578439950942993,0.9428090453147888,0.27675849199295044,0,0.5254775881767273,0.3333333432674408,-0.782791256904602,0,15.764328002929688,10,-23.48373794555664,1],
+			"matrix": [-0.8302755355834961,-7.449426853156638e-9,-0.5573531985282898,0,-0.18578439950942993,0.9428090453147888,0.27675849199295044,0,0.5254775881767273,0.3333333432674408,-0.782791256904602,0,15.764328002929688,10,-23.48373794555664,1],
 			"fov": 50,
 			"zoom": 1,
 			"near": 0.1,
