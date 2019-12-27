@@ -68,22 +68,6 @@
 
 				document.body.appendChild( app.dom );
 
-				if ( json.project.editable === true ) {
-
-					var button = document.createElement( "div" );
-					button.id = "edit";
-					button.textContent = "OPEN TO EDITOR";
-					button.addEventListener( "click", function ( event ) {
-
-						var url = location.href.split( "/" ).slice( 0, - 1 ).join( "/" );
-						window.open( "https://sloothes.com/three/r78/editor/#file=" + url + "/app.json" );
-
-					}, false );
-
-					document.body.appendChild( button );
-
-				}
-
 			//	Resize.
 
 				window.addEventListener( "resize", function () {
