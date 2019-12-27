@@ -15,8 +15,12 @@
 	"scripts": {
 		"3020AE50-A7A0-4AAE-91A5-6C5821F68FC1": [
 			{
-				"name": "sw & scc",
-				"source": "// ServiceWorker.\n\nif ( \"serviceWorker\" in navigator ) {\n\n\ttry {\n\n\t\tnavigator.serviceWorker.register( \"sw.js\" );\n\n\t} catch ( error ) {\n\n\t\tdebugMode && console.log( error );\n\n\t}\n\n}\n\n//  Socketcluster.\n\nsocket = socketCluster.create({\n\thostname: \"anywhere3d.com\",\n\tcodecEngine: scCodecMinBin,\n});\n\nsocket.on(\"connect\", function(status){\n\tdebugMode && console.log({\"status\": status});\n});\n\nsocket.on(\"error\", function (err) {\n\tconsole.error( err.stack );\n});\n\nsocket.on(\"authStateChange\", function( state ){\n\tdebugMode && console.log({\"authStateChange\": state});\n});\n\nsocket.on(\"subscribe\", function( name, object ){\n\tdebugMode && console.log(\"subscribed successfully to\", name, \"channel:\", object);\n});\n\n"
+				"name": "sw",
+				"source": "// ServiceWorker.\n\nif ( \"serviceWorker\" in navigator ) {\n\n\ttry {\n\n\t\tnavigator.serviceWorker.register( \"sw.js\" );\n\n\t} catch ( error ) {\n\n\t\tdebugMode && console.log( error );\n\n\t}\n\n}\n\n"
+			},
+			{
+				"name": "scc",
+				"source": "//  Socketcluster.\n\nsocket = socketCluster.create({\n\thostname: \"anywhere3d.com\",\n\tcodecEngine: scCodecMinBin,\n});\n\nsocket.on(\"connect\", function(status){\n\tdebugMode && console.log({\"status\": status});\n});\n\nsocket.on(\"error\", function (err) {\n\tconsole.error( err.stack );\n});\n\nsocket.on(\"authStateChange\", function( state ){\n\tdebugMode && console.log({\"authStateChange\": state});\n});\n\nsocket.on(\"subscribe\", function( name, object ){\n\tdebugMode && console.log(\"subscribed successfully to\", name, \"channel:\", object);\n});\n\n"
 			},
 			{
 				"name": "Config.js",
