@@ -56,6 +56,13 @@
 
 	const textures = [
 
+	//	sky03
+		"https://i.imgur.com/fbLkP5b.jpg", // "posx"
+		"https://i.imgur.com/2ezGkl6.jpg", // "negx"
+		"https://i.imgur.com/IyXzc4L.jpg", // "posy"
+		"https://i.imgur.com/ja5htHQ.jpg", // "negy"
+		"https://i.imgur.com/QZDxVvI.jpg", // "posz"
+		"https://i.imgur.com/BZ68JvT.jpg", // "negz"
 	//	sky02
 		"https://i.imgur.com/AiYr5Bj.jpg", // "posx"
 		"https://i.imgur.com/BawPVy4.jpg", // "negx"
@@ -63,7 +70,7 @@
 		"https://i.imgur.com/t5eKqEL.jpg", // "negy"
 		"https://i.imgur.com/L7SNCXP.jpg", // "posz"
 		"https://i.imgur.com/7dcYXKc.jpg", // "negz"
-	//	deepspace.
+	//	space.
 		"https://i.imgur.com/v6bjQLb.jpg", // "posx"
 		"https://i.imgur.com/lwrlr6P.jpg", // "negx"
 		"https://i.imgur.com/kKUKBJg.jpg", // "posy"
