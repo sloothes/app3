@@ -57,11 +57,24 @@
 
 	const textures = [
 
+	//	eyes.
+		"https://i.imgur.com/VybEXWo.png",
+		"https://i.imgur.com/BxzT89R.png",
+		"https://i.imgur.com/Si5QWl0.png",
+
+	//	hair.
+		"https://i.imgur.com/hvCqpxt.jpg",
+		"https://i.imgur.com/uPyhj5R.jpg",
+		"https://i.imgur.com/Qh5JtAx.jpg",
+		"https://i.imgur.com/NWw7sOL.png",
+		"https://i.imgur.com/33FQFCR.png",
+
 	//	male skins.
 		"https://i.imgur.com/2xafKkK.jpg", // "light"
 		"https://i.imgur.com/4h9rLSg.jpg", // "medium"
 		"https://i.imgur.com/mAZgsw8.jpg", // "dark"
 		"https://i.imgur.com/V6MSKOT.jpg", // "normal"
+
 	//	female skins.
 		"https://i.imgur.com/lk6QpjA.jpg", // "light"
 		"https://i.imgur.com/cT7BYGt.jpg", // "medium"
