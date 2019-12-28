@@ -68,7 +68,11 @@
 			},
 			{
 				"name": "world - octree.js",
-				"source": "world = new MW.World();\n\n//  OCTREE.\n\nvar partition = 1;\nvar min = new THREE.Vector3( -5000, -1000, -5000 );\nvar max = new THREE.Vector3(  5000,  1000,  5000 );\n\noctree = new MW.Octree( min, max, partition );\n\nworld.add( octree );\n\n//\tUPDATE.\n\nvar clock = new THREE.Clock(); // important!\n\nfunction update(){\n\n\tvar delta = clock.getDelta();\n\tworld.step( delta );\n\n}\n\n//\tHELPERS.\n\nvar octMeshHelpers = [];\nvar octEdgesHelpers = [];\n\nfunction octreeHelpers( octree ){\n\tvar nodeIndex = octree.nodes.length - 1;\n\tvar node = octree.nodes[ nodeIndex ][0];\n\tvar x = node.max.x - node.min.x;\n\tvar y = node.max.y - node.min.y;\n\tvar z = node.max.z - node.min.z;\n\tvar geometry = new THREE.BoxGeometry(x, y, z);\n\tvar material = new THREE.MeshBasicMaterial({visible:false});\n\n\toctree.nodes[ nodeIndex ].forEach(function(node){\n\n\t\tvar x = node.max.x - node.min.x;\n\t\tvar y = node.max.y - node.min.y;\n\t\tvar z = node.max.z - node.min.z;\n\n\t\tvar mesh = new THREE.Mesh(geometry, material);\n\t\tvar helper = new THREE.EdgesHelper( mesh, 0xffff00 );\n\n\t\tmesh.position.set(\n\t\t\tnode.min.x + (x/2),\n\t\t\tnode.min.y + (y/2),\n\t\t\tnode.min.z + (z/2)\n\t\t);\n\n\t\t//  scene.add( mesh );\n\t\tscene.add( mesh, helper );\n\n\t\toctMeshHelpers.push(mesh);\n\t\toctEdgesHelpers.push(helper);\n\t});\n}\n\nfunction octreeNodeHelper( node ){\n\tvar x = node.max.x - node.min.x;\n\tvar y = node.max.y - node.min.y;\n\tvar z = node.max.z - node.min.z;\n\tvar geometry = new THREE.BoxGeometry(x, y, z);\n\tvar material = new THREE.MeshBasicMaterial({visible:false});\n\tvar mesh = new THREE.Mesh(geometry, material);\n\tmesh.position.set(\n\t\tnode.min.x + (x/2),\n\t\tnode.min.y + (y/2),\n\t\tnode.min.z + (z/2)\n\t);\n\tscene.add( mesh );\n\toctMeshHelpers.push(mesh);\n\tvar helper = new THREE.EdgesHelper( mesh, 0xffff00 );\n\thelper.name = \"octree helper\";\n\tscene.add( helper );\n\toctEdgesHelpers.push(helper);\n}\n\n//  Remove octree mesh helpers.\n\nfunction removeOctreeHelpers(){\n\toctMeshHelpers.forEach( function( item, i ){\n\t\tscene.remove( octMeshHelpers[i] );\n\t\tvar geometry = octMeshHelpers[i].geometry;\n\t\tvar material = octMeshHelpers[i].material;\n\t\tgeometry.dispose();\n\t\tmaterial.dispose();\n\t});\n\tconsole.log( \"octree mesh helpers has been removed.\" );\n}\n"
+				"source": "//\tWORLD.\n\nworld = new MW.World();\n\n//  OCTREE.\n\nvar partition = 1;\nvar min = new THREE.Vector3( -5000, -1000, -5000 );\nvar max = new THREE.Vector3(  5000,  1000,  5000 );\n\noctree = new MW.Octree( min, max, partition );\n\n//\tUPDATE.\n\nvar clock = new THREE.Clock(); // important!\n\nfunction update(){\n\n\tvar delta = clock.getDelta();\n\tworld.step( delta );\n\n}\n\nworld.add( octree );\n\n//\tHELPERS.\n\nvar octMeshHelpers = [];\nvar octEdgesHelpers = [];\n\nfunction octreeHelpers( octree ){\n\tvar nodeIndex = octree.nodes.length - 1;\n\tvar node = octree.nodes[ nodeIndex ][0];\n\tvar x = node.max.x - node.min.x;\n\tvar y = node.max.y - node.min.y;\n\tvar z = node.max.z - node.min.z;\n\tvar geometry = new THREE.BoxGeometry(x, y, z);\n\tvar material = new THREE.MeshBasicMaterial({visible:false});\n\n\toctree.nodes[ nodeIndex ].forEach(function(node){\n\n\t\tvar x = node.max.x - node.min.x;\n\t\tvar y = node.max.y - node.min.y;\n\t\tvar z = node.max.z - node.min.z;\n\n\t\tvar mesh = new THREE.Mesh(geometry, material);\n\t\tvar helper = new THREE.EdgesHelper( mesh, 0xffff00 );\n\n\t\tmesh.position.set(\n\t\t\tnode.min.x + (x/2),\n\t\t\tnode.min.y + (y/2),\n\t\t\tnode.min.z + (z/2)\n\t\t);\n\n\t\t//  scene.add( mesh );\n\t\tscene.add( mesh, helper );\n\n\t\toctMeshHelpers.push(mesh);\n\t\toctEdgesHelpers.push(helper);\n\t});\n}\n\nfunction octreeNodeHelper( node ){\n\tvar x = node.max.x - node.min.x;\n\tvar y = node.max.y - node.min.y;\n\tvar z = node.max.z - node.min.z;\n\tvar geometry = new THREE.BoxGeometry(x, y, z);\n\tvar material = new THREE.MeshBasicMaterial({visible:false});\n\tvar mesh = new THREE.Mesh(geometry, material);\n\tmesh.position.set(\n\t\tnode.min.x + (x/2),\n\t\tnode.min.y + (y/2),\n\t\tnode.min.z + (z/2)\n\t);\n\tscene.add( mesh );\n\toctMeshHelpers.push(mesh);\n\tvar helper = new THREE.EdgesHelper( mesh, 0xffff00 );\n\thelper.name = \"octree helper\";\n\tscene.add( helper );\n\toctEdgesHelpers.push(helper);\n}\n\n//  Remove octree mesh helpers.\n\nfunction removeOctreeHelpers(){\n\toctMeshHelpers.forEach( function( item, i ){\n\t\tscene.remove( octMeshHelpers[i] );\n\t\tvar geometry = octMeshHelpers[i].geometry;\n\t\tvar material = octMeshHelpers[i].material;\n\t\tgeometry.dispose();\n\t\tmaterial.dispose();\n\t});\n\tconsole.log( \"octree mesh helpers has been removed.\" );\n}\n"
+			},
+			{
+				"name": "ground.js",
+				"source": "//\tGROUND.\n\nvar ground = new THREE.Mesh(\n\tnew THREE.PlaneGeometry( 10000, 10000, 1, 1 ),\n\tnew THREE.MeshLambertMaterial({ \n\t\topacity:1, \n\t\tcolor:0x829ec4,\n\t})\n);\n\n//\tWe need only the geometry of the ground\n//\tso there is not need to add to the scene.\n\nground.rotation.x = -Math.PI / 2; // THREE.Math.degToRad( -90 );\noctree.importThreeMesh( ground ); // important!\n\n//\tHELPERS.\n\ngroundHelper = new GroundHelper(1000, 10);  \n\nfunction GroundHelper(xz, step){\n\n\tif (!xz) xz = 1000;\n\tif (!step) step = 10;\n\n\tvar grid = new THREE.GridHelper( xz, step, 0x444444, 0x444444 );\n\n\tgrid.name = \"GRID\"\n\tgrid.position.y = 0;\n\n//\tscene.add( grid );\n\n\treturn grid;\n}\n\nscene.add( groundHelper );\n"
 			},
 			{
 				"name": "",
@@ -77,10 +81,16 @@
 			{
 				"name": "",
 				"source": "function update( event ) {}"
-			},
+			}],
+		"149EC18B-6912-4264-AA13-9CFB3CF23197": [
 			{
-				"name": "",
-				"source": "function update( event ) {}"
+				"name": "custom-origin-helper.js",
+				"source": "CustonOriginHelper = this;\n\nvar loader = new THREE.FontLoader();\nvar url = \"/three/fonts/helvetiker_regular.typeface.json\";\n\nloader.load( url, function( font ){\n\tdebugMode && console.log( \"font:\", font );\n\n\t//  Font Material\n\tvar face_mtl = new THREE.MeshBasicMaterial( { color: 0xffffff } );\n\tvar side_mtl = new THREE.MeshBasicMaterial( { color: 0x888888 } );\n\tvar material = new THREE.MeshFaceMaterial([ face_mtl, side_mtl ]);\n\n\t//  Text Styles.\n\tvar h0 = { size: 40, height: 2,   curveSegments: 10, font: font, weight: \"normal\", style: \"normal\", bevelThickness: 1, bevelSize: 2, bevelEnabled: false, material: 0, extrudeMaterial: 1 }\n\tvar h1 = { size: 20, height: 1,   curveSegments: 10, font: font, weight: \"normal\", style: \"normal\", bevelThickness: 1, bevelSize: 2, bevelEnabled: false, material: 0, extrudeMaterial: 1 }\n\tvar h2 = { size: 10, height: 1,   curveSegments: 10, font: font, weight: \"normal\", style: \"normal\", bevelThickness: 1, bevelSize: 2, bevelEnabled: false, material: 0, extrudeMaterial: 1 }\n\tvar h3 = { size: 5,  height: 0.5, curveSegments: 10, font: font, weight: \"normal\", style: \"normal\", bevelThickness: 1, bevelSize: 2, bevelEnabled: false, material: 0, extrudeMaterial: 1 }\n\n\tvar distance = 1200;\n\n\t//  Origins Group.\n\tCustonOriginHelper.add( new Text3D( \"+x\", h1, [2, 2, 5], [ distance, 20, 0], [0, -Math.PI * 0.5, 0]) );\n\tCustonOriginHelper.add( new Text3D( \"-x\", h1, [2, 2, 5], [-distance, 20, 0], [0,  Math.PI * 0.5, 0]) ); \n\tCustonOriginHelper.add( new Text3D( \"+z\", h1, [2, 2, 5], [0, 20,  distance], [0, -Math.PI,       0]) ); \n\tCustonOriginHelper.add( new Text3D( \"-z\", h1, [2, 2, 5], [0, 20, -distance], [0,              0, 0]) ); \n\tCustonOriginHelper.add( new Text3D( \"+y\", h1, [2, 2, 5], [0,   distance, 0], [ Math.PI * 0.5, 0, 0]) ); \n\tCustonOriginHelper.add( new Text3D( \"-y\", h1, [2, 2, 5], [0,  -distance, 0], [-Math.PI * 0.5, 0, 0]) ); \n\n\t//\tscene.add( CustonOriginHelper );\n\n\tfunction Text3D(text, style, scale, position, rotation){\n\t\tvar geometry = new THREE.TextGeometry( text, style );\n\t\tvar mesh = new THREE.Mesh(geometry, material );\n\t\tgeometry.computeBoundingBox();\n\t\tvar width = geometry.boundingBox.max.x - geometry.boundingBox.min.x;\n\t\tmesh.geometry.center();\n\t\tmesh.scale.fromArray( scale ); \n\t\tmesh.rotation.fromArray( rotation );\n\t\tmesh.position.fromArray( position );\n\t\treturn mesh;\n\t}\n});"
+			}],
+		"FCA96762-F6E1-47B3-A8BB-CB9B60E0BD6F": [
+			{
+				"name": "custom-axis-helper.js",
+				"source": "CustomAxisHelper = this;\n\nthis.add.apply( this, helper(5200) );\n\nfunction helper( distance ){\n\n\tvar geometryX = new THREE.Geometry();\n\tvar geometryY = new THREE.Geometry();\n\tvar geometryZ = new THREE.Geometry();\n\n\tvar materialX = new THREE.LineBasicMaterial( {color: 0xff0000} );\n\tvar materialY = new THREE.LineBasicMaterial( {color: 0x00ff00} );\n\tvar materialZ = new THREE.LineBasicMaterial( {color: 0x0000ff} );\n\n\tgeometryX.vertices.push( new THREE.Vector3( -distance, 0, 0 ), new THREE.Vector3( distance, 0, 0 ) );\n\tgeometryY.vertices.push( new THREE.Vector3( 0, -distance, 0 ), new THREE.Vector3( 0, distance, 0 ) );\n\tgeometryZ.vertices.push( new THREE.Vector3( 0, 0, -distance ), new THREE.Vector3( 0, 0, distance ) );\n\n\tvar axisX = new THREE.Line( geometryX, materialX );\n\tvar axisY = new THREE.Line( geometryY, materialY );\n\tvar axisZ = new THREE.Line( geometryZ, materialZ );\n\n\treturn [ axisX, axisZ ];\n\n}\n"
 			}]
 	},
 	"camera": {
@@ -114,7 +124,20 @@
 			"uuid": "3020AE50-A7A0-4AAE-91A5-6C5821F68FC1",
 			"type": "Scene",
 			"name": "Scene",
-			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+			"children": [
+				{
+					"uuid": "FCA96762-F6E1-47B3-A8BB-CB9B60E0BD6F",
+					"type": "Group",
+					"name": "Custom Axis Helper",
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+				},
+				{
+					"uuid": "149EC18B-6912-4264-AA13-9CFB3CF23197",
+					"type": "Group",
+					"name": "Custon Origin Helper",
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+				}]
 		}
 	}
 }
