@@ -3,6 +3,13 @@
 	self.version = 1;
 	var debugMode = true;
 
+	const appItems = [
+
+		"/favicon.ico",
+		"/three/fonts/helvetiker_regular.typeface.json",
+
+	];
+
 	const libraries = [
 
 		"/js/Objectid.js",
@@ -57,7 +64,6 @@
 		"https://i.imgur.com/x9q8z0K.jpg", // "posz"
 		"https://i.imgur.com/HYcK7Ii.jpg", // "negz"
 
-
 	];
 
 
@@ -65,7 +71,11 @@
 
 		caches.open( "app" ).then( function( cache ){
 
-			cache.add( "/favicon.ico" );
+			appItems.forEach( function ( url ) {
+				cache.add( url ).catch( function () {
+					console.error( "[SW] Cound\'t cache:", url );
+				});
+			});
 
 		}).then( function(){
 			return caches.open( "libraries" );
