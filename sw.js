@@ -25,6 +25,7 @@
 		"/js/MathDecimalAdjustment.js",
 		"/js/DeviceDetector.js",
 
+	//	three.
 		"/three/three.js",
 		"/three/Animation.js",
 		"/three/AnimationHandler.js",
@@ -56,13 +57,18 @@
 
 	const textures = [
 
-	//	sky03
-		"https://i.imgur.com/fbLkP5b.jpg", // "posx"
-		"https://i.imgur.com/2ezGkl6.jpg", // "negx"
-		"https://i.imgur.com/IyXzc4L.jpg", // "posy"
-		"https://i.imgur.com/ja5htHQ.jpg", // "negy"
-		"https://i.imgur.com/QZDxVvI.jpg", // "posz"
-		"https://i.imgur.com/BZ68JvT.jpg", // "negz"
+	//	male skins.
+		"https://i.imgur.com/2xafKkK.jpg", // "light"
+		"https://i.imgur.com/4h9rLSg.jpg", // "medium"
+		"https://i.imgur.com/mAZgsw8.jpg", // "dark"
+		"https://i.imgur.com/V6MSKOT.jpg", // "normal"
+	//	female skins.
+		"https://i.imgur.com/lk6QpjA.jpg", // "light"
+		"https://i.imgur.com/cT7BYGt.jpg", // "medium"
+		"https://i.imgur.com/cgjD1Bl.jpg", // "dark"
+		"https://i.imgur.com/pRYCYkb.jpg", // "darker"
+		"https://i.imgur.com/HEQKHjk.jpg", // "normal"
+
 	//	sky02
 		"https://i.imgur.com/AiYr5Bj.jpg", // "posx"
 		"https://i.imgur.com/BawPVy4.jpg", // "negx"
@@ -70,13 +76,27 @@
 		"https://i.imgur.com/t5eKqEL.jpg", // "negy"
 		"https://i.imgur.com/L7SNCXP.jpg", // "posz"
 		"https://i.imgur.com/7dcYXKc.jpg", // "negz"
-	//	space.
+	//	sky03
+		"https://i.imgur.com/fbLkP5b.jpg", // "posx"
+		"https://i.imgur.com/2ezGkl6.jpg", // "negx"
+		"https://i.imgur.com/IyXzc4L.jpg", // "posy"
+		"https://i.imgur.com/ja5htHQ.jpg", // "negy"
+		"https://i.imgur.com/QZDxVvI.jpg", // "posz"
+		"https://i.imgur.com/BZ68JvT.jpg", // "negz"
+	//	space4.
 		"https://i.imgur.com/v6bjQLb.jpg", // "posx"
 		"https://i.imgur.com/lwrlr6P.jpg", // "negx"
 		"https://i.imgur.com/kKUKBJg.jpg", // "posy"
 		"https://i.imgur.com/N0oZlJR.jpg", // "negy"
 		"https://i.imgur.com/x9q8z0K.jpg", // "posz"
 		"https://i.imgur.com/HYcK7Ii.jpg", // "negz"
+	//	space5.
+		"https://i.imgur.com/QMKy05Z.jpg", // "posx"
+		"https://i.imgur.com/eys5BBV.jpg", // "negx"
+		"https://i.imgur.com/8l6Pi8Q.jpg", // "posy"
+		"https://i.imgur.com/Z1KEwRy.jpg", // "negy"
+		"https://i.imgur.com/wSs16BJ.jpg", // "posz"
+		"https://i.imgur.com/DwVYZWm.jpg", // "negz"
 
 	];
 
