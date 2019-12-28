@@ -56,7 +56,14 @@
 
 	const textures = [
 
-	//	background.
+	//	sky02
+		"https://i.imgur.com/AiYr5Bj.jpg", // "posx"
+		"https://i.imgur.com/BawPVy4.jpg", // "negx"
+		"https://i.imgur.com/OnEYrxP.jpg", // "posy"
+		"https://i.imgur.com/t5eKqEL.jpg", // "negy"
+		"https://i.imgur.com/L7SNCXP.jpg", // "posz"
+		"https://i.imgur.com/7dcYXKc.jpg", // "negz"
+	//	deepspace.
 		"https://i.imgur.com/v6bjQLb.jpg", // "posx"
 		"https://i.imgur.com/lwrlr6P.jpg", // "negx"
 		"https://i.imgur.com/kKUKBJg.jpg", // "posy"
