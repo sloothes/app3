@@ -111,13 +111,11 @@
 		"https://i.imgur.com/wSs16BJ.jpg", // "posz"
 		"https://i.imgur.com/DwVYZWm.jpg", // "negz"
 
-	//
-
+	//	fabrics.
 		"https://i.imgur.com/ODeftia.jpg",
 		"https://i.imgur.com/PdjMvia.png",
 		"https://i.imgur.com/lMRdRRP.jpg",
 		"https://i.imgur.com/8eycYxu.png",
-		"https://i.imgur.com/GQXROS3.png",
 		"https://i.imgur.com/IbVtz6j.png",
 		"https://i.imgur.com/LtN1F8y.png",
 		"https://i.imgur.com/ejSGU9j.png",
@@ -127,6 +125,7 @@
 		"https://i.imgur.com/UOGluG4.jpg",
 		"https://i.imgur.com/LcJsy2F.jpg",
 		"https://i.imgur.com/E9YKax0.jpg",
+
 	];
 
 
