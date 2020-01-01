@@ -46,10 +46,6 @@ var APP = {
 			//	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 			}
-			
-		//	renderer.domElement.style.backgroundSize = "cover";
-		//	renderer.domElement.style.backgroundRepeat = "no-repeat";
-		//	renderer.domElement.style.backgroundImage = "url(https://i.postimg.cc/rmcWddkS/leg-PNG4817.png)";
 
 			this.dom.appendChild( renderer.domElement );
 			this.setScene( loader.parse( json.scene ) );
