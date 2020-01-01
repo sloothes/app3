@@ -49,7 +49,7 @@ var APP = {
 			
 			renderer.domElement.style.backgroundSize = "cover";
 			renderer.domElement.style.backgroundRepeat = "no-repeat";
-			renderer.domElement.style.backgroundImage = "url(https://aws1.discourse-cdn.com/standard17/uploads/threejs/original/2X/8/85bff1bd72f236d1891406c1f2c7baedbab304ab.jpeg)";
+			renderer.domElement.style.backgroundImage = "url(http://pngimg.com/uploads/leg/leg_PNG4817.png)";
 
 			this.dom.appendChild( renderer.domElement );
 			this.setScene( loader.parse( json.scene ) );
