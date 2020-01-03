@@ -94,7 +94,7 @@
 
 				} else {
 
-					console.log( "on progress:", loaded.toFixed(2), "KB loaded." );
+					console.log( ( loaded / 1024 ).toFixed(2), "MB loaded." );
 
 				//	var total = 56291835; // (in bytes)
 				//	var percent = (e.loaded / total) * 100;
@@ -111,11 +111,6 @@
 			//	setTimeout( dialogError );
 
 			});
-
-
-		</script>
-
-		<script>
 
 		//	Encode - Decode.
 
