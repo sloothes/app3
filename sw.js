@@ -3,9 +3,10 @@
 	self.version = 1;
 	var debugMode = true;
 
-	const appItems = [
+	const appAssets = [
 
 		"/favicon.ico",
+		"https://i.imgur.com/9F0fO1h.jpg",
 		"/three/fonts/helvetiker_regular.typeface.json",
 
 	];
@@ -182,7 +183,7 @@
 
 		caches.open( "app" ).then( function( cache ){
 
-			appItems.forEach( function ( url ) {
+			appAssets.forEach( function ( url ) {
 				cache.add( url ).catch( function () {
 					console.error( "[SW] Cound\'t cache:", url );
 				});
