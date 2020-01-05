@@ -83,6 +83,12 @@
 		"https://i.imgur.com/pRYCYkb.jpg", // "darker"
 		"https://i.imgur.com/HEQKHjk.jpg", // "normal"
 
+	//	female lingerie.
+		"https://i.imgur.com/gjZJGVK.jpg", // "fishnet"
+		"https://i.imgur.com/DaPR4yq.png",
+		"https://i.imgur.com/NAOAqsy.png",
+		"https://i.imgur.com/NQUvcCl.png",
+
 	//	sky02
 		"https://i.imgur.com/AiYr5Bj.jpg", // "posx"
 		"https://i.imgur.com/BawPVy4.jpg", // "negx"
