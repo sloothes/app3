@@ -88,6 +88,13 @@
 		"https://i.imgur.com/DaPR4yq.png",
 		"https://i.imgur.com/NAOAqsy.png",
 		"https://i.imgur.com/NQUvcCl.png",
+		"https://i.imgur.com/uDJQvn4.png",
+		"https://i.imgur.com/5n3pc0y.png",
+		"https://i.imgur.com/DFht7ui.png",
+		"https://i.imgur.com/RFLOqmt.png",
+
+	//	female tanlines.
+		"https://i.imgur.com/lGzha7i.png",
 
 	//	sky02
 		"https://i.imgur.com/AiYr5Bj.jpg", // "posx"
